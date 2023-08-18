@@ -10,3 +10,8 @@
    comments. */
 
    console.log("Comments make your code more readable by others.");
+
+   /* Here is
+   my determination */
+   console.log("I love coding, I am committed to changing life with technology")//I will try my best to do this well
+
