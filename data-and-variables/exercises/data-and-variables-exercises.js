@@ -9,3 +9,10 @@
 // Calculate a trip to the moon below
 
 // Print the results of the trip to the moon below
+
+console.log(16 - 2 * 5 / 3 + 1)
+console.log(1 + 5 % 3);
+
+const input = require('readline-sync');
+
+let name = input.question("Enter your name: ");
