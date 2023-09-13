@@ -2,6 +2,8 @@
 
 // BEFORE running the code, predict what will be printed to the console by the following statements:
 
+let engineIndicatorLight = "green"
+
 if (engineIndicatorLight === "green") {
    console.log("engines have started");
 } else if (engineIndicatorLight === "green blinking") {
