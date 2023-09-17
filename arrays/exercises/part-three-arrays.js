@@ -1,4 +1,4 @@
-let cargoHold = [1138, 'space suits', 'parrot', 'instruction manual', 'meal packs', 'space tether', '20 meters'];
+// let cargoHold = [1138, 'space suits', 'parrot', 'instruction manual', 'meal packs', 'space tether', '20 meters'];
 
 //Use splice to make the following changes to the cargoHold array. Be sure to print the array after each step to confirm your updates.
 
@@ -7,3 +7,7 @@ let cargoHold = [1138, 'space suits', 'parrot', 'instruction manual', 'meal pack
 //2) Remove ‘instruction manual’ from the array. (Hint: indexOf is helpful to avoid manually counting an index).
 
 //3) Replace the elements at indexes 2 - 4 with the items ‘cat’, ‘fob’, and ‘string cheese’.
+
+
+const input = require('readline-sync');
+let name = input.question("what's your name?");
