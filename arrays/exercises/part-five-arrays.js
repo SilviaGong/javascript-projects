@@ -7,11 +7,12 @@ console.log(str.split('e'));
 console.log(str.split(' '));
 console.log(str.split(''));
 //2) Use the join method on the array to identify the purpose of the parameter inside the ().
+console.log(str.join());
 
 //3) Do split or join change the original string/array?
-console.log(cargoHold.split(',').sort().join(','));
+console.log(str.split(',').sort().join(','));
 //4) We can take a comma-separated string and convert it into a modifiable array. Try it! Alphabetize the cargoHold string, and then combine the contents into a new string.
-
+console.log(str.split(','));
 
 /* let cargoHold = "water,space suits,food,plasma sword,batteries";
 let charles = ['coder', 'Tech', 47, 23, 350];
