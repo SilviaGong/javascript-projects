@@ -6,3 +6,5 @@ practiceFile.push(42, 'hello');
 console.log(practiceFile);
 
 //Use a SetValue to add the items "false", and "-4.6" to the array.  Print the array to confirm the changes.
+practiceFile.push(false, -4.6, "87");
+console.log(practiceFile);
