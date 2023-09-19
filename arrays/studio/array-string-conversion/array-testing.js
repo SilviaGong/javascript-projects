@@ -12,6 +12,9 @@ function reverseCommas() {
 	let output;
 	//TODO: 2. write the code required for this step
 	console.log(protoArray1.includes(","));
+	console.log(protoArray2.includes(";"));
+	console.log(protoArray3.includes(" "));
+	console.log(protoArray4.includes(", "));
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
 	return output;
 }
