@@ -11,7 +11,7 @@ function reverseCommas() {
 	let check;
 	let output;
 	//TODO: 2. write the code required for this step
-
+	console.log(protoArray1.includes(","));
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
 	return output;
 }
@@ -20,9 +20,9 @@ function reverseCommas() {
 function semiDash() {
 	let check;
 	let output;
-//TODO: write the code required for this step
+	//TODO: write the code required for this step
 
-  
+
 	return output;
 }
 
@@ -30,7 +30,7 @@ function semiDash() {
 function reverseSpaces() {
 	let check;
 	let output;
-  //TODO: write the code required for this step
+	//TODO: write the code required for this step
 
 	return output;
 }
@@ -40,15 +40,15 @@ function commaSpace() {
 	let check;
 	let output;
 	//TODO: write the code required for this step
-  
+
 	return output;
 }
 
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
 module.exports = {
-	strings : strings, 
-	reverseCommas : reverseCommas,
-	semiDash: semiDash, 
-	reverseSpaces : reverseSpaces,
-	commaSpace : commaSpace
+	strings: strings,
+	reverseCommas: reverseCommas,
+	semiDash: semiDash,
+	reverseSpaces: reverseSpaces,
+	commaSpace: commaSpace
 };
