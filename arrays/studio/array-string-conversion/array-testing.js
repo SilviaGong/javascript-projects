@@ -3,7 +3,25 @@ let protoArray2 = "A;C;M;E";
 let protoArray3 = "space delimited string";
 let protoArray4 = "Comma-spaces, might, require, typing, caution";
 
-strings = [protoArray1, protoArray2, protoArray3, protoArray4];
+let strings = [protoArray1, protoArray2, protoArray3, protoArray4];
+
+console.log(strings);
+//Use the split methods convert string to array.
+/* console.log(protoArray1.split(","));
+console.log(protoArray2.split(";"));
+console.log(protoArray3.split(" "));
+console.log(protoArray4.split(", ")); */
+
+//Use the join methods convert back to string.
+/* console.log(protoArray1.split(",").join());
+console.log(protoArray2.split(";").join());
+console.log(protoArray3.split(" ").join());
+console.log(protoArray4.split(", ").join()); */
+
+
+// use the includes method to check to see if the words are separated by commas (,), semicolons (;), or just spaces.
+
+
 
 //2) 
 function reverseCommas() {
@@ -11,10 +29,13 @@ function reverseCommas() {
 	let check;
 	let output;
 	//TODO: 2. write the code required for this step
-	console.log(protoArray1.includes(","));
-	console.log(protoArray2.includes(";"));
-	console.log(protoArray3.includes(" "));
-	console.log(protoArray4.includes(", "));
+	for (check = 0; check < strings.length; check++) {
+		if (strings[check].includes(",")) {
+			output = strings[check].split(",").reverse().join();
+		} else {
+
+		}
+	}
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
 	return output;
 }
@@ -24,7 +45,13 @@ function semiDash() {
 	let check;
 	let output;
 	//TODO: write the code required for this step
+	for (check = 0; check < strings.length; check++) {
+		if (strings[check].includes(";")) {
+			output = strings[check].split(";").reverse().join();
+		} else {
 
+		}
+	}
 
 	return output;
 }
@@ -34,7 +61,13 @@ function reverseSpaces() {
 	let check;
 	let output;
 	//TODO: write the code required for this step
+	for (check = 0; check < strings.length; check++) {
+		if (strings[check].includes(" ")) {
+			output = strings[check].split(" ").reverse().join();
+		} else {
 
+		}
+	}
 	return output;
 }
 
@@ -43,15 +76,27 @@ function commaSpace() {
 	let check;
 	let output;
 	//TODO: write the code required for this step
+	for (check = 0; check < strings.length; check++) {
+		if (strings[check].includes(", ")) {
+			output = strings[check].split(", ").reverse().join();
+		} else {
 
+		}
+	}
 	return output;
 }
 
+function runProgram() {
+	reverseCommas();
+}
+
+runProgram();
 // NOTE: Don't add or modify any code below this line or your program might not run as expected.
 module.exports = {
 	strings: strings,
 	reverseCommas: reverseCommas,
 	semiDash: semiDash,
 	reverseSpaces: reverseSpaces,
-	commaSpace: commaSpace
+	commaSpace: commaSpace,
+	runProgram: runProgram
 };
