@@ -10,7 +10,7 @@ while (fuelLevel <= 5000 || fuelLevel > 30000 || isNaN(fuelLevel)) {
 }
 
 //b. Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the entry.
-while (numAstronauts <= 7 || isNaN(numAstronauts)) {
+while (numAstronauts < 1 || numAstronauts > 7 || isNaN(numAstronauts)) {
   numAstronauts = input.question("Enter the number of astronauts:")
 }
 

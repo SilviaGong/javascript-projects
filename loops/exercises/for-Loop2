@@ -1,0 +1,32 @@
+const input = require('readline-sync');
+
+// Pig Latin Example
+let phrase = input.question("Please enter a phrase: ");
+let phraseArray = phrase.split(" ");
+let hrasepayArrayway = [];
+let hrasepay = "";
+
+for (let i = 0; i < phraseArray.length; i++) {
+  let vowels = "aeiou";
+  // ["Baldur's", "Gate", "3"]
+  let firstLetter = phraseArray[i][0]; // i = 0, firstLetter = "B"
+  let remaining = phraseArray[i].slice(1); // i = 0, remaining = "aldur's"
+
+  if (vowels.indexOf(firstLetter.toLowerCase()) > -1) { // if the first letter is a vowel
+    hrasepayArrayway.push(phraseArray[i] + "-way");
+  } else if (!isNaN(Number(firstLetter))) { // if first letter is a number
+    hrasepayArrayway.push(phraseArray[i] + "-yay");
+  } else {
+    hrasepayArrayway.push(remaining + firstLetter + "ay"); // "aldur'sBay"
+  }
+}
+
+hrasepay = hrasepayArrayway.join(" ");
+console.log(`
+Here's your original phrase: 
+${phrase}
+
+Your new phrase is:
+${hrasepay}
+
+hankTay ouyay orfay articipatingpay in-way histay experiment-way.`);
