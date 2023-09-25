@@ -1,8 +1,8 @@
 
 //A.Write a function makeLine(size) that returns a line with exactly size hashes.
-function makeLine(size, character = "#") {
+function makeLine(length, character = "#") {
   let line = '';
-  for (let i = 0; i < size; i++) {
+  for (let i = 0; i < length; i++) {
     line += character;
   }
   return line;
@@ -12,7 +12,12 @@ function makeLine(size, character = "#") {
 function makeSquare(size) {
   let squire = '';
   for (let i = 0; i < size; i++) {
-    squire += makeLine(size, character) + "\n";
+    if (i === size - 1) {
+      squire += makeLine(size, character);
+    } else {
+      squire += makeLine(size, character) + "\n";
+
+    }
   }
   return squire;
 }
