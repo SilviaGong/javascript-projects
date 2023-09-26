@@ -14,7 +14,7 @@ function makeIngredientList() {
 }
 
 function makeCereal(ingredients) {
-  let name = "Please enter a name for your cereal. Yes, this is important. ";
+  let name = input.question("Please enter a name for your cereal. Yes, this is important. ");
   let output = `Good morning! It's time for the most important meal of the day: breakfast! Today we'll be eating a hearty bowl of ${name} cereal containing `;
 
   for (let i = 0; i < ingredients.length; i++) {
