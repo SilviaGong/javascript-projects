@@ -1,5 +1,5 @@
 function combineEntries(arrayName) {
-  if (arrayName.length <= 1){
+  if (arrayName.length <= 1) {
     return arrayName[0];
   } else {
     //console.log(arrayName[0], arrayName.slice(1));
