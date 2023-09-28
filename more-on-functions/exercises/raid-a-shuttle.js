@@ -1,30 +1,30 @@
 function checkFuel(level) {
-  if (level > 100000){
+  if (level > 100000) {
     return 'green';
-  } else if (level > 50000){
+  } else if (level > 50000) {
     return 'yellow';
   } else {
     return 'red';
   }
 }
 
-function holdStatus(arr){
+function holdStatus(arr) {
   if (arr.length < 7) {
-    return `Spaces available: ${7-arr.length}.`;
-  } else if (arr.length > 7){
-    return `Over capacity by ${arr.length-7} items.`;
+    return `Spaces available: ${7 - arr.length}.`;
+  } else if (arr.length > 7) {
+    return `Over capacity by ${arr.length - 7} items.`;
   } else {
     return "Full";
   }
 }
 
-let fuelLevel = 200000;
+let fuelLevel = 30000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
-/* Steal some fuel from the shuttle:
+/* /* Steal some fuel from the shuttle:
  * /
  
 //a). Define an anonymous function and set it equal to a variable with a normal, non-suspicious name. The function takes one parameter. This will be the fuel level on the shuttle.
@@ -33,9 +33,27 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //c). Once you figure out how much fuel to pump out, return that value.
 
-//d). Decide where to best place your function call to gather our new fuel.
+//d). Decide where to best place your function call to gather our new fuel. */
+let stealFuel = function (level) {
+  let currentColor = checkFuel(level);
+  let stolenFuel = 0;
+  if (currentColor === 'green') {
+    stolenFuel = level - 100001;
+  } else if (currentColor === 'yellow') {
+    stolenFuel = level - 50001;
+  } else {
+    stolenFuel = level - 1;
+  }
+  return stolenFuel;
 
-/* Next, liberate some of that glorious cargo.
+};
+
+let stolenFuelAmount = stealFuel(fuelLevel);
+console.log(`Stolen fuel amount: ${stolenFuelAmount}`);
+console.log(checkFuel(fuelLevel - stolenFuelAmount));
+
+
+/* /* Next, liberate some of that glorious cargo.
  * /
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
@@ -44,14 +62,38 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //c). The cargo hold has better security than the fuel tanks. It counts how many things are in storage. You need to replace what you steal with something worthless. The count MUST stay the same, or you’ll get caught and thrown into the LaunchCode brig.
 
-//d). Don’t get hasty, matey! Remember to test your function.
+//d). Don’t get hasty, matey! Remember to test your function. */
+
+let stealArr = function (array) {
+  let currentStatus = holdStatus(array);
+  let stealArr = [];
+  if (currentStatus === "Full") {
+    stealArr = array.slice(0, 2);
+    // array.splice(0, 2);
+    // array.splice(0, 0, "worthless", "worthless");
+  }
+  return stealArr;
+}
+
+let stolenArray = stealArr(cargoHold);
+console.log("Stolen array:", stolenArray);
+console.log(cargoHold);
+console.log(holdStatus(cargoHold));
+
 
 /* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
- * /
+ 
  
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+*/
 
+function irs(fuelLevel, cargoHold) {
+  let stolenFuelAmount = stealFuel(fuelLevel);
+  let stolenArray = stealArr(cargoHold);
+  console.log(`Raided ${stolenFuelAmount} kg of fuel from the tanks, and stole ${stolenArray[0]} and ${stolenArray[1]} from the cargo hold.`);
+}
+irs(fuelLevel, cargoHold);
