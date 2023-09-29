@@ -1,29 +1,37 @@
-function findMinValue(arr){
-  let min = arr[0];
-  for (i = 0; i < arr.length; i++){
-    if (arr[i] < min){
-      min = arr[i];
+//Sample arrays for testing:
+let nums1 = [5, 10, 2, 42];
+let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
+let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
+
+function getMininum(numsArray) {
+  let min = numsArray[0];
+  for (let i = 1; i < numsArray.length; i++) {
+    if (numsArray[i] < min) {
+      min = numsArray[i];
+      // minIndex = i;
     }
   }
   return min;
 }
 
-//Create a function with an array of numbers as its parameter. This function will return a new array with the numbers sorted from least to greatest value.
+//Sort each array in ascending order.
+function getAscending(arr) {
+  let sortedArray = [];
+  while (arr.length > 0) {
+    let min = getMininum(arr);   //Get the value of minimum
+    let minIndex = arr.indexOf(min); //Get the index of minimum value
+    sortedArray.push(min);
+    arr.splice(minIndex, 1);
+  }
+  return sortedArray;
+}
 
-/*Within the function:
-1) Define a new, empty array to hold the final sorted numbers.
-2) Use the findMinValue function to find the minimum value in the old array.
-3) Add the minimum value to the new array, and remove the minimum value from the old array.
-4) Repeat parts b & c until the old array is empty.
-5) Return the new sorted array.
-6) Be sure to print the results in order to verify your code.*/
+//Sort each array in decending order.
+function getDescending(arr) {
+  let sortedArray = getAscending(arr); // Use the existing getAscending function
+  return sortedArray.reverse(); // Reverse the sorted array
+}
 
-//Your function here...
-
-/* BONUS MISSION: Refactor your sorting function to use recursion below:
- */
-
-//Sample arrays for testing:
-let nums1 = [5, 10, 2, 42];
-let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
-let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+// console.log(getAscending(nums2));
+console.log(getDescending(nums2));
