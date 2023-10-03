@@ -1,0 +1,19 @@
+console.log(Math.round(7.999999999999999999999999));
+console.log(Math.ceil(7.9999999999999999999999999));
+console.log(Math.floor(7.9999999999999999999999999999));
+console.log(Math.trunc(7.9999999999999999999999999999));
+console.log(Math.max(7.9999999999999999999999999999));
+
+
+
+console.log(Math.round(7.1111111111111111111111111111));
+console.log(Math.ceil(7.1111111111111111111111111111));
+console.log(Math.floor(7.1111111111111111111111111111));
+console.log(Math.trunc(7.1111111111111111111111111111));
+console.log(Math.max(7.1111111111111111111111111111));
+
+
+//print 1~20
+function roll1d20() {
+  return Math.ceil(Math.random() * 20);
+}
