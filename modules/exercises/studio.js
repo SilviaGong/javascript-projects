@@ -1,4 +1,10 @@
 
+/* My previous major was computer science at college, but I haven’t coded since graduation. 
+So actually I forgot them all, but retained my logical and leaning ability. 
+I had been a product manager for 7 years in the internet education industry in China before.  
+So I am cofidence that I can learn coding again.*/
+
+
 //1.Use code to print “Hello, World” to the screen.
 console.log("Hello, World");
 
