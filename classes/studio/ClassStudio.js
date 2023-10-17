@@ -3,7 +3,7 @@ class CrewCandidate {
   constructor(name, mass, scores) {
     this.name = name;
     this.mass = mass;
-    this.scores = scores;
+    this.scores = scores;//array of test results.
   }
   addScore(score) {
     this.scores.push(score);
@@ -51,12 +51,13 @@ console.log(`${gator.name} earned an average test score of ${gator.average()}% a
 function boostStatus(candidate, targetStatus) {
   let tests = 0;
   while (candidate.status() !== targetStatus) {
-    const randomScore = Math.floor(Math.random() * 21) + 5; // Random score between 5 and 25
-    candidate.addScore(randomScore);
+    // const randomScore = Math.floor(Math.random() * 21) + 5; // Random score between 5 and 25
+    candidate.addScore(100);
     tests++;
   }
   return tests;
 }
+console.log(boostStatus(gator, "Reserve"));
 
 // console.log(`Glad Gator's status is now "Reserve" after ${boostStatus(gator, "Reserve")} tests.`);
 // console.log(`Glad Gator's status is now "Accepted" after ${boostStatus(gator, "Accepted")} tests.`);
