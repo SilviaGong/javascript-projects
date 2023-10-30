@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multiple Event Listeners Example</title>
+</head>
+
+<body>
+  <button id="myButton">Click me</button>
+
+  <script>
+    const button = document.getElementById("myButton");
+
+    // First event handler
+    button.addEventListener('click', function () {
+      console.log("Event handler 1 executed");
+    });
+    // Second event handler
+
+    button.addEventListener('click', function () {
+      console.log("Event handler 2 executed");
+    }); 
+  </script>
+</body>
+
+</html>
