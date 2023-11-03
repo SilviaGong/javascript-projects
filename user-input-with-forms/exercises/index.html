@@ -14,14 +14,20 @@
 
 <body>
   <!-- TODO: add form here -->
-  <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
-    <label>Test Name<input type="text" name="testName" value="testName"></label>
-    <button>Run Simulation</button>
-  </form>
+  <header>
+    <h1>Rocket Simulation</h1>
+  </header>
+  <main>
+    <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+      <label>Test Name<input type="text" name="testName" value="testName"></label>
+      <label>Test Date<input type="date" name="testdate" placeholder="mm/dd/yyyy"></label>
+      <button>Run Simulation</button>
+    </form>
 
-  <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that
-    shows a box with an arrow coming out of it.
-  </p>
+    <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that
+      shows a box with an arrow coming out of it.
+    </p>
+  </main>
 </body>
 
 </html>
