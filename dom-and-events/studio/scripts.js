@@ -9,6 +9,11 @@ function init() {
   const landButton = document.getElementById("landing");
   const abortButton = document.getElementById("missionAbort");
   const buttons = document.querySelectorAll(".center-block button");
+  const rocket = document.getElementById('rocket');
+
+  rocket.style.position = 'relative';
+  rocket.style.top = '0px';
+  rocket.style.left = '0px';
 
   takeOffButton.addEventListener('click', function () {
     let confirm = window.confirm("Confirm that the shuttle is ready for takeoff.");
@@ -35,10 +40,16 @@ function init() {
   });
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function () {
-      if (buttons[i].id === "up") {
+      if (buttons[i].id === "up" && parseInt(rocket.style.top) > 0) {
         currentHeight += 10000;
-      } else if (buttons[i].id === "down") {
+        rocket.style.top = (parseInt(rocket.style.top) - 10) + "px";
+      } else if (buttons[i].id === "down" && parseInt(rocket.style.top) < (background.clientHeight - rocket.clientHeight)) {
         currentHeight -= 10000;
+        rocket.style.top = (parseInt(rocket.style.top) + 10) + "px";
+      } else if (buttons[i].id === "left" && parseInt(rocket.style.left) > (0 - background.clientWidth / 2)) {
+        rocket.style.left = (parseInt(rocket.style.left) - 10) + "px";
+      } else if (buttons[i].id === "right" && (parseInt(rocket.style.left)) < (background.clientWidth - rocket.clientWidth)) {
+        rocket.style.left = (parseInt(rocket.style.left) + 10) + "px";
       }
       shuttleHeight.textContent = currentHeight;
     });
